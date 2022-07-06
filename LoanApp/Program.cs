@@ -11,8 +11,13 @@ builder.Services.AddDbContext<ApplicationContext>(options => options.UseSqlServe
 var app = builder.Build();
 
 app.MapControllerRoute(
-    name:  "default",
+    name: "default",
     pattern: "{controller=NoAuth}/{action=Index}/{id?}"
+);
+
+app.MapControllerRoute(
+    name: "signUp",
+    pattern: "{controller}/{action}"
 );
 
 app.Run();

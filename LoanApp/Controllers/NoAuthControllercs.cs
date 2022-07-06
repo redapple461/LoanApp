@@ -17,5 +17,20 @@ namespace LoanApp.Controllers
         {
             return View();
         }
+
+        [HttpGet]
+        public async Task<IActionResult> SignUp()
+        {
+            return View("SignUp");
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> SignUp(string name, string phone, string password)
+        {
+            User newUser = new User { Name = name, Phone = phone, Password = password , ContactList = ""};
+            db.Users.Add(newUser);
+            await db.SaveChangesAsync();
+            return RedirectToAction("Index", "Home", new {area = ""});
+        }
     }
 }

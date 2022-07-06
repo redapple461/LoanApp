@@ -56,3 +56,5 @@ C:\Users\Dimab\source\repos\_LoanApp\LoanApp\bin\Debug\net6.0\runtimes\win\lib\n
 C:\Users\Dimab\source\repos\_LoanApp\LoanApp\obj\Debug\net6.0\LoanApp.csproj.CopyComplete
 C:\Users\Dimab\source\repos\_LoanApp\LoanApp\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.Design.dll
 C:\Users\Dimab\source\repos\_LoanApp\LoanApp\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.Design.dll
+C:\Users\Dimab\source\repos\_LoanApp\LoanApp\bin\Debug\net6.0\Humanizer.dll
+C:\Users\Dimab\source\repos\_LoanApp\LoanApp\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
