@@ -15,7 +15,7 @@ namespace LoanApp.Controllers
 
         public async Task<IActionResult> Index()
         {
-            return View(await db.Users.ToListAsync());
+            return View(await db.Loans.ToListAsync());
         }
     }
 }

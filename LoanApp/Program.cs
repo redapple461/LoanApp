@@ -12,12 +12,17 @@ var app = builder.Build();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=NoAuth}/{action=Index}/{id?}"
+    pattern: "{controller=Home}/{action=Index}/{id?}"
 );
 
 app.MapControllerRoute(
     name: "signUp",
     pattern: "{controller}/{action}"
+);
+
+app.MapControllerRoute(
+    name: "loans",
+    pattern: "{controller=Loans}/{action=AddLoan}"
 );
 
 app.Run();
