@@ -1,12 +1,15 @@
 using Microsoft.EntityFrameworkCore;
 using LoanApp.Models;
-
+using LoanApp.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 string connection = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<ApplicationContext>(options => options.UseSqlServer(connection));
+
+builder.Services.AddScoped<IRepository<User>, UserRepository>();
+builder.Services.AddScoped<IRepository<Loan>, LoanRepository>();
 
 var app = builder.Build();
 

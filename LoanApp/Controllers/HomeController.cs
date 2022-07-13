@@ -1,21 +1,22 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using LoanApp.Models;
+using LoanApp.Repositories;
 
 namespace LoanApp.Controllers
 {
     public class HomeController  : Controller
     {
-        ApplicationContext db;
+        private readonly IRepository<Loan> _loanRepository;
 
-        public  HomeController(ApplicationContext context)
+        public  HomeController(IRepository<Loan> repo)
         {
-            this.db = context;
+            this._loanRepository = repo;
         }
 
         public async Task<IActionResult> Index()
         {
-            return View(await db.Loans.ToListAsync());
+            return View(this._loanRepository.GetAll());
         }
     }
 }
