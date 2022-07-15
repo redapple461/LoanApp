@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using LoanApp.Models;
 using LoanApp.Repositories;
+using Microsoft.AspNetCore.Authorization;
 
 namespace LoanApp.Controllers
 {
@@ -14,6 +15,7 @@ namespace LoanApp.Controllers
             this._loanRepository = repo;
         }
 
+        [Authorize]
         public async Task<IActionResult> Index()
         {
             return View(this._loanRepository.GetAll());

@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using LoanApp.Repositories;
 using LoanApp.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace LoanApp.Controllers
 {
@@ -11,10 +12,10 @@ namespace LoanApp.Controllers
         {
             _userRepository = userRepository;
         }
-
+        [Authorize]
         public async Task<ActionResult> Profile()
         {
-            return View(await this._userRepository.GetById(1));
+            return View(await this._userRepository.GetByCondition(u => u.Phone == User.Identity.Name));
         }
     }
 }

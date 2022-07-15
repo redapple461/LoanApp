@@ -1,4 +1,5 @@
 ﻿using LoanApp.Models;
+using System.Linq.Expressions;
 
 namespace LoanApp.Repositories
 {
@@ -39,6 +40,12 @@ namespace LoanApp.Repositories
         public async void SaveChanges()
         {
             await db.SaveChangesAsync();
+        }
+
+
+        public async Task<Loan> GetByCondition(Expression<Func<Loan, bool>> expression)
+        {
+            return db.Loans.FirstOrDefault(expression);
         }
     }
 }

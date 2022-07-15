@@ -1,0 +1,24 @@
+﻿@model LoanApp.Models.SignInModel
+ 
+<h2>Вход на сайт</h2>
+ 
+<a asp-action="SignUp" asp-controller="Auth">Регистрация</a>
+ 
+<form asp-action="SignIn" asp-controller="Auth" asp-anti-forgery="true">
+    <div class="validation" asp-validation-summary="ModelOnly"></div>
+    <div>
+        <div class="form-group">
+            <label asp-for="Phone">Введите Phone</label>
+            <input type="text" asp-for="Phone" />
+            <span asp-validation-for="Phone" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Password">Введите пароль</label>
+            <input asp-for="Password" />
+            <span asp-validation-for="Password" />
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Войти" class="btn btn-outline-dark" />
+        </div>
+    </div>
+</form>
