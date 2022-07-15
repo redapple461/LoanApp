@@ -28,4 +28,9 @@ app.MapControllerRoute(
     pattern: "{controller=Loans}/{action=AddLoan}"
 );
 
+app.MapControllerRoute(
+    name: "userProfile",
+    pattern: "{controller=User}/{action=Profile}"
+);
+
 app.Run();

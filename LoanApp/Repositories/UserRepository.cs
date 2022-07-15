@@ -26,7 +26,7 @@ namespace LoanApp.Repositories
             return db.Users.ToList<User>();
         }
 
-        public User GetById(int id)
+        public async Task<User> GetById(int id)
         {
             return db.Users.FirstOrDefault<User>(x => x.UserId == id);
         }
