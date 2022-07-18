@@ -4,6 +4,8 @@
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
 @model IEnumerable<LoanApp.Models.Loan>
 <html>
 <head>
@@ -11,7 +13,7 @@
 </head>
 <body>
     <table class="table">
-         <tr><th>Value</th><th>Reason</th></tr>
+         <tr><th>@Localizer["Home"]</th><th>@Localizer["Profile"]</th></tr>
         @foreach (var item in Model)
         {
             <tr>

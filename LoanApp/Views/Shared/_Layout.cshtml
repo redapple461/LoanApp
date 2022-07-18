@@ -1,8 +1,5 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
 <html>
     <style>
         a{
@@ -15,15 +12,14 @@
     <body>
         <header>
             <div style="border: 1px solid black">
-                <a href="/">Home</a>
-                <a href="/User/Profile">Profile</a>
-                <a>Search</a>
-                <a href="/Loans/AddLoan">Add loan</a>
-                <a asp-controller="Auth" asp-action="Logout">Logout</a>
+                <a href="/">@Localizer["Home"]</a>
+                <a href="/User/Profile">@Localizer["Profile"]</a>
+                <a>@Localizer["Search"]</a>
+                <a href="/Loans/AddLoan">@Localizer["Add Loan"]</a>
+                <a asp-controller="Auth" asp-action="Logout">@Localizer["Logout"]</a>
             </div>
         </header>
         <div id="main">
             @RenderBody()
-        </div>
-    </body>
+        </div>   </body>
 </html>

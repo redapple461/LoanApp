@@ -2,9 +2,14 @@ using Microsoft.EntityFrameworkCore;
 using LoanApp.Models;
 using LoanApp.Repositories;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using System.Globalization;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Localization;
+using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddControllersWithViews();
+builder.Services.AddLocalization(options => options.ResourcesPath = "Resoucres");
+builder.Services.AddControllersWithViews().AddViewLocalization();
 
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
         .AddCookie(options =>
@@ -20,7 +25,18 @@ builder.Services.AddScoped<IRepository<Loan>, LoanRepository>();
 
 var app = builder.Build();
 
-app.UseDeveloperExceptionPage();
+var supportedCultures = new[]
+{
+    new CultureInfo("en"),
+    new CultureInfo("ru")
+};
+
+app.UseRequestLocalization(new RequestLocalizationOptions
+{
+    DefaultRequestCulture = new RequestCulture("ru"),
+    SupportedCultures = supportedCultures,
+    SupportedUICultures = supportedCultures
+});
 
 app.UseStaticFiles();
 app.UseRouting();

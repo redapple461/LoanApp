@@ -58,3 +58,12 @@ C:\Users\Dimab\source\repos\_LoanApp\LoanApp\bin\Debug\net6.0\Microsoft.EntityFr
 C:\Users\Dimab\source\repos\_LoanApp\LoanApp\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.Design.dll
 C:\Users\Dimab\source\repos\_LoanApp\LoanApp\bin\Debug\net6.0\Humanizer.dll
 C:\Users\Dimab\source\repos\_LoanApp\LoanApp\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\Dimab\source\repos\_LoanApp\LoanApp\bin\Debug\net6.0\en\LoanApp.resources.dll
+C:\Users\Dimab\source\repos\_LoanApp\LoanApp\bin\Debug\net6.0\ru\LoanApp.resources.dll
+C:\Users\Dimab\source\repos\_LoanApp\LoanApp\obj\Debug\net6.0\LoanApp.csproj.GenerateResource.cache
+C:\Users\Dimab\source\repos\_LoanApp\LoanApp\obj\Debug\net6.0\en\LoanApp.resources.dll
+C:\Users\Dimab\source\repos\_LoanApp\LoanApp\obj\Debug\net6.0\ru\LoanApp.resources.dll
+C:\Users\Dimab\source\repos\_LoanApp\LoanApp\obj\Debug\net6.0\LoanApp.Resources.Views.Shared._Layout.en.resources
+C:\Users\Dimab\source\repos\_LoanApp\LoanApp\obj\Debug\net6.0\LoanApp.Resources.Views.Shared._Layout.ru.resources
+C:\Users\Dimab\source\repos\_LoanApp\LoanApp\obj\Debug\net6.0\LoanApp.Resources.Views.Home.Index.en.resources
+C:\Users\Dimab\source\repos\_LoanApp\LoanApp\obj\Debug\net6.0\LoanApp.Resources.Views.Home.Index.ru.resources
