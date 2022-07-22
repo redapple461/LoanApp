@@ -32,7 +32,6 @@ namespace LoanApp.Controllers
             // TODO: Move from hardcode userId to real one
             Loan newLoan = new Loan { UserId = 1, Value = value, Reason = reason };
             this._loanRepository.Add(newLoan);
-            this._loanRepository.SaveChanges();
             return RedirectToAction("Index", "Home", new { area = "" });
         }
 

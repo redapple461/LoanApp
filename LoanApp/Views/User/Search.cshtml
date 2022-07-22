@@ -1,0 +1,49 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+       Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model IEnumerable<LoanApp.Models.User>
+<html>
+    <style>
+        .search_form{
+             width: 200px;
+             border: 1px solid #2d2d2d;
+             display: flex;
+             justify-content: center;
+             flex-direction: column;
+             align-items: center;
+             margin: auto;
+             margin-top: 10%;
+             width:  400px;
+             height: 400px;
+        }
+        .search_form input{
+            margin: 15px 15px;
+        }
+    </style>
+    <body>
+        <form method="post">
+            <div class="search_form">
+            <div>
+                <label>User phone</label>
+                <input name="phone" placeholder="Enter value"/>
+            </div>
+             <div class="form-group">
+                <input type="submit" value="Найти" class="btn btn-outline-dark" />
+            </div>
+            <div>
+                 @foreach (var user in Model)
+                {
+                    <tr>
+                        <td>@user.Name</td>
+                        <td>@user.Phone</td>
+                    </tr>
+                }
+            </div>
+        </div>
+        </form>
+        
+    </body>
+</html>

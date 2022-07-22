@@ -14,7 +14,7 @@
             <div style="border: 1px solid black">
                 <a href="/">@Localizer["Home"]</a>
                 <a href="/User/Profile">@Localizer["Profile"]</a>
-                <a>@Localizer["Search"]</a>
+                <a asp-controller="User" asp-action="Search">@Localizer["Search"]</a>
                 <a href="/Loans/AddLoan">@Localizer["Add Loan"]</a>
                 <a asp-controller="Auth" asp-action="Logout">@Localizer["Logout"]</a>
             </div>

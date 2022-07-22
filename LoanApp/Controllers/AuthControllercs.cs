@@ -63,8 +63,6 @@ namespace LoanApp.Controllers
                 if (user == null)
                 {
                     this._userRepository.Add(new User { Phone = model.Phone, Name = model.Name, Password = model.Password });
-                    //TODO: make return type with errors or ok
-                    this._userRepository.SaveChanges();
 
                     await Authenticate(model.Phone);
 

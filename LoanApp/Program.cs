@@ -63,4 +63,9 @@ app.MapControllerRoute(
     pattern: "{controller=User}/{action=Profile}"
 );
 
+app.MapControllerRoute(
+    name: "search",
+    pattern: "{controller=User}/{action=Search}"
+);
+
 app.Run();

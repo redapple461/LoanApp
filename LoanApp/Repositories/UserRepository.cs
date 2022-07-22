@@ -12,9 +12,10 @@ namespace LoanApp.Repositories
             db = context;
         }
 
-        public void Add(User entity)
+        public async void Add(User entity)
         {
             db.Users.Add(entity);
+            await db.SaveChangesAsync();
         }
 
         public void AddRange(IEnumerable<User> entities)

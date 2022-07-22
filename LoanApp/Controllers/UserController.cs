@@ -17,5 +17,17 @@ namespace LoanApp.Controllers
         {
             return View(await this._userRepository.GetByCondition(u => u.Phone == User.Identity.Name));
         }
+
+        [HttpGet]
+        public async Task<ActionResult> Search()
+        {
+            return View("Search", this._userRepository.GetAll());
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> Search(string phone)
+        {
+            return View("Search", this._userRepository.GetByCondition(user => user.Phone == phone));
+        }
     }
 }
