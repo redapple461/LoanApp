@@ -1,4 +1,5 @@
 ﻿using LoanApp.Models;
+using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 
 namespace LoanApp.Repositories
@@ -59,12 +60,17 @@ namespace LoanApp.Repositories
         public async Task<User> Update(User newUser, User su)
         {
             // TODO: implement more understandable update logic
-            var signedUser = db.Users.FirstOrDefault<User>(u => u.Phone == su.Phone);
-            if(signedUser != null)
+            var signedUser = await db.Users.Where(u => u.Phone == su.Phone)
+                    .Select(x => x).FirstOrDefaultAsync();
+            if (signedUser != null)
             {
                 if(signedUser.ContactList != "")
                 {
                     signedUser.ContactList += newUser.UserId;
+                }
+                if(signedUser.TotalLoan != newUser.TotalLoan)
+                {
+                    signedUser.TotalLoan = newUser.TotalLoan;
                 }
                 signedUser.ContactList += "," + newUser.UserId;
             }

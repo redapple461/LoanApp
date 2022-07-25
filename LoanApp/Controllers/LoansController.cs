@@ -36,7 +36,11 @@ namespace LoanApp.Controllers
         {
             User signedUser = await this._userRepository.GetByCondition(u => u.Phone == User.Identity.Name);
             Loan newLoan = new Loan { UserId = signedUser.UserId, Value = model.Value, Reason = model.Reason, DateOfCreation = DateTime.Now, WhomUserId = model.WhomUserId };
-            this._loanRepository.Add(newLoan);
+            await this._loanRepository.Add(newLoan);
+            User newUser = (User)signedUser.Clone();
+            newUser.TotalLoan += model.Value;
+
+            await this._userRepository.Update(newUser, signedUser);
             return RedirectToAction("Index", "Home", new { area = "" });
         }
 

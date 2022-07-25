@@ -18,7 +18,7 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
         });
 
 string connection = builder.Configuration.GetConnectionString("DefaultConnection");
-builder.Services.AddDbContext<ApplicationContext>(options => options.UseSqlServer(connection));
+builder.Services.AddDbContext<ApplicationContext>(options => options.UseSqlServer(connection), ServiceLifetime.Transient);
 
 builder.Services.AddScoped<IRepository<User>, UserRepository>();
 builder.Services.AddScoped<IRepository<Loan>, LoanRepository>();

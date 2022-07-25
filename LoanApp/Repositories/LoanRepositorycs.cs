@@ -15,7 +15,7 @@ namespace LoanApp.Repositories
         public async Task<Loan> Add(Loan entity)
         {
             db.Loans.Add(entity);
-            await db.SaveChangesAsync();
+            db.SaveChangesAsync();
             return entity;
         }
 
