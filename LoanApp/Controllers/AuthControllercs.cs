@@ -62,7 +62,7 @@ namespace LoanApp.Controllers
                 User user = await this._userRepository.GetByCondition(u => u.Phone == model.Phone);
                 if (user == null)
                 {
-                    this._userRepository.Add(new User { Phone = model.Phone, Name = model.Name, Password = model.Password });
+                    await this._userRepository.Add(new User { Phone = model.Phone, Name = model.Name, Password = model.Password, ContactList = "" });
 
                     await Authenticate(model.Phone);
 

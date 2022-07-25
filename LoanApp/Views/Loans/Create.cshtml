@@ -4,6 +4,7 @@
 @{
        Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@model LoanApp.Models.Loan
 <html>
     <style>
         .login_form{
@@ -23,20 +24,24 @@
         }
     </style>
     <body>
-        <form method="post">
-            <div class="login_form">
+       <form asp-action="AddLoan" asp-controller="Loans"  asp-antiforgery="true">
             <div>
-                <label>Loan value</label>
-                <input name="value" placeholder="Enter value"/>
+                <div>
+                    <label asp-for="Value"></label>
+                    <input type="text" asp-for="Value" />
+                </div>
+                <div>
+                    <label asp-for="Reason"></label>
+                    <input  type="text" asp-for="Reason" />
+                </div>
+                <div>
+                    <label asp-for="WhomUserId">Whom User</label>
+                    <select asp-for="WhomUserId" asp-items="ViewBag.AvailableUsers"></select>
+                </div>
+                <div>
+                    <input type="submit" value="Save" />
+                </div>
             </div>
-            <div>
-                <label>Loan reason</label>
-                <input name="reason" placeholder="Enter Reason" />
-            </div>
-            <div>
-                <button> Confirm </button>
-            </div>
-        </div>
         </form>
         
     </body>

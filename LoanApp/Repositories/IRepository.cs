@@ -7,10 +7,11 @@ namespace LoanApp.Repositories
         Task<T> GetById(int id);
         Task<T> GetByCondition(Expression<Func<T, bool>> expression);
         IEnumerable<T> GetAll();
-        void Add(T entity);
+        Task<IEnumerable<T>> GetRangeByCondition(Expression<Func<T, bool>> expression);
+        Task<T> Add(T entity);
         void AddRange(IEnumerable<T> entities);
         void Remove(T entity);
 
-        void SaveChanges();
+        Task<T> SaveChanges();
     }
 }

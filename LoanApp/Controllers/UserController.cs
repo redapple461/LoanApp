@@ -27,7 +27,12 @@ namespace LoanApp.Controllers
         [HttpPost]
         public async Task<ActionResult> Search(string phone)
         {
-            return View("Search", this._userRepository.GetByCondition(user => user.Phone == phone));
+            if (string.IsNullOrEmpty(phone))
+            {
+                return View("Search", this._userRepository.GetAll());
+            }
+            List<User> findedUsers =  this._userRepository.GetRangeByCondition(user => user.Phone == phone).Result.ToList<User>();
+            return View("Search", findedUsers);
         }
     }
 }

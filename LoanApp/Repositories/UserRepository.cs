@@ -12,10 +12,11 @@ namespace LoanApp.Repositories
             db = context;
         }
 
-        public async void Add(User entity)
+        public async Task<User> Add(User entity)
         {
             db.Users.Add(entity);
             await db.SaveChangesAsync();
+            return entity;
         }
 
         public void AddRange(IEnumerable<User> entities)
@@ -38,14 +39,21 @@ namespace LoanApp.Repositories
             db.Users.Remove(entity);
         }
 
-        public async void SaveChanges()
+        public async Task<User> SaveChanges()
         {
             await db.SaveChangesAsync();
+            //TODO: move hardcode
+            return new User();
         }
 
         public async Task<User> GetByCondition(Expression<Func<User, bool>> expression)
         {
             return db.Users.FirstOrDefault(expression);
+        }
+
+        public async Task<IEnumerable<User>> GetRangeByCondition(Expression<Func<User, bool>> expression)
+        {
+            return db.Users.Where<User>(expression);
         }
     }
 }

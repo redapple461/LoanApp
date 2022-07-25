@@ -33,15 +33,16 @@
              <div class="form-group">
                 <input type="submit" value="Найти" class="btn btn-outline-dark" />
             </div>
-            <div>
-                 @foreach (var user in Model)
+            <table class="table">
+                 <tr><th>User name</th><th>phone</th></tr>
+                @foreach (var user in Model)
                 {
                     <tr>
                         <td>@user.Name</td>
                         <td>@user.Phone</td>
                     </tr>
                 }
-            </div>
+            </table>
         </div>
         </form>
         
