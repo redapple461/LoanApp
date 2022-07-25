@@ -31,7 +31,7 @@ namespace LoanApp.Controllers
             {
                 return View("Search", this._userRepository.GetAll());
             }
-            List<User> findedUsers =  this._userRepository.GetRangeByCondition(user => user.Phone == phone).Result.ToList<User>();
+            List<User> findedUsers = this._userRepository.GetRangeByCondition(user => user.Phone == phone).Result.ToList<User>();
             return View("Search", findedUsers);
         }
     }

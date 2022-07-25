@@ -1,4 +1,5 @@
 ﻿using System.Linq.Expressions;
+using LoanApp.Models;
 
 namespace LoanApp.Repositories
 {
@@ -11,7 +12,7 @@ namespace LoanApp.Repositories
         Task<T> Add(T entity);
         void AddRange(IEnumerable<T> entities);
         void Remove(T entity);
-
+        Task<T> Update(T newEntity, User ?signedUser);
         Task<T> SaveChanges();
     }
 }

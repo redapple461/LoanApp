@@ -55,5 +55,21 @@ namespace LoanApp.Repositories
         {
             return db.Users.Where<User>(expression);
         }
+
+        public async Task<User> Update(User newUser, User su)
+        {
+            // TODO: implement more understandable update logic
+            var signedUser = db.Users.FirstOrDefault<User>(u => u.Phone == su.Phone);
+            if(signedUser != null)
+            {
+                if(signedUser.ContactList != "")
+                {
+                    signedUser.ContactList += newUser.UserId;
+                }
+                signedUser.ContactList += "," + newUser.UserId;
+            }
+            await db.SaveChangesAsync();
+            return signedUser;
+        }
     }
 }

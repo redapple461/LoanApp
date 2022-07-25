@@ -31,12 +31,22 @@
                 <input name="name" placeholder="Enter Name"/>
             </div>
             <div>
-                <label>Phone</label>
-                <input name="phone" placeholder="Enter Phone" />
+                <label>Phone: @Model.Phone</label>
+                <input name="phone" placeholder="Enter Phone" disabled/>
             </div>
             <div>
-                <label>Password</label>
+                <label>Password: @Model.Password</label>
                 <input name="password" placeholder="Enter Password" />
+            </div>
+            <div>
+                <label>Contact List</label>
+                 @foreach (var contact in Model.ContactList)
+                {
+                    <tr>
+                        <td>@contact</td>
+      
+                    </tr>
+                }
             </div>
             <div>
                 <button> Confirm </button>

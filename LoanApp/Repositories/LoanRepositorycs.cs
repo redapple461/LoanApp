@@ -55,5 +55,10 @@ namespace LoanApp.Repositories
         {
             return db.Loans.Where<Loan>(expression);
         }
+
+        public async Task<Loan> Update(Loan newLoan, User signedUser)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
