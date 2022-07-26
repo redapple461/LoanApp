@@ -23,7 +23,7 @@ namespace LoanApp.Controllers
             User signedUser = await this._userRepository.GetByCondition(u => u.Phone == User.Identity.Name);
             List<Loan> allUserLoan = this._loanRepository.GetRangeByCondition(l => l.UserId == signedUser.UserId).Result.ToList<Loan>();
             ViewBag.TotalLoan = signedUser.TotalLoan;
-            return View(allUserLoan);
+            return View("Index", allUserLoan);
         }
     }
 }

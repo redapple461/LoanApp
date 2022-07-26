@@ -6,15 +6,16 @@ using System.Globalization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddLocalization(options => options.ResourcesPath = "Resoucres");
+builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
 builder.Services.AddControllersWithViews().AddViewLocalization();
 
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
         .AddCookie(options =>
         {
-            options.LoginPath = new Microsoft.AspNetCore.Http.PathString("/Auth/SignIn");
+            options.LoginPath = new PathString("/Auth/SignIn");
         });
 
 string connection = builder.Configuration.GetConnectionString("DefaultConnection");
@@ -33,7 +34,7 @@ var supportedCultures = new[]
 
 app.UseRequestLocalization(new RequestLocalizationOptions
 {
-    DefaultRequestCulture = new RequestCulture("ru"),
+    DefaultRequestCulture = new RequestCulture("en"),
     SupportedCultures = supportedCultures,
     SupportedUICultures = supportedCultures
 });

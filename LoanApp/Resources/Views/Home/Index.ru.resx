@@ -117,24 +117,20 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Add loan" xml:space="preserve">
-    <value>Добавить страховку</value>
-    <comment>Страница  добавления страховки</comment>
+  <data name="Reason" xml:space="preserve">
+    <value>Причина</value>
+    <comment>Причина кредита</comment>
   </data>
-  <data name="Home" xml:space="preserve">
-    <value>Главная</value>
-    <comment>Домашняя страница</comment>
+  <data name="StartDate" xml:space="preserve">
+    <value>Дата выдачи</value>
+    <comment>Дата выдачи кредита</comment>
   </data>
-  <data name="Logout" xml:space="preserve">
-    <value>Выйти</value>
-    <comment>Выход  из прлиожение</comment>
+  <data name="Value" xml:space="preserve">
+    <value>Сумма</value>
+    <comment>Сумма кредита</comment>
   </data>
-  <data name="Profile" xml:space="preserve">
-    <value>Профиль</value>
-    <comment>Страница профиля</comment>
-  </data>
-  <data name="Search" xml:space="preserve">
-    <value>Поиск</value>
-    <comment>Страница  поиска</comment>
+  <data name="WhomUserId" xml:space="preserve">
+    <value>Кому</value>
+    <comment>Кому кредитовано</comment>
   </data>
 </root>
